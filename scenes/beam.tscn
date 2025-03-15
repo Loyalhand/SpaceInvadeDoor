@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyh1vnvm8ofif"]
 
 [ext_resource type="Texture2D" uid="uid://be1i4kaeip0ye" path="res://icon.svg" id="1_da10d"]
-[ext_resource type="Script" path="res://scripts/beam.gd" id="1_lo7rm"]
+[ext_resource type="Script" path="res://scripts/Rocket.gd" id="1_lo7rm"]
 [ext_resource type="Script" path="res://scripts/hitbox.gd" id="3_dkn63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlugp"]
 
-[node name="Beam" type="Node2D"]
+[node name="Rocket" type="Node2D"]
 rotation = -1.5708
 script = ExtResource("1_lo7rm")
 
@@ -23,3 +23,5 @@ damage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_wlugp")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
