@@ -2,6 +2,7 @@ class_name HurtBox
 extends Area2D
 
 @onready var parent = $".."
+signal health_depleted
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,5 +20,7 @@ func _on_area_entered(hitbox: HitBox):
 
 func take_damage(hitbox: HitBox):
 	parent.health -= hitbox.damage
-	pass
+	if parent.health < 0:
+		health_depleted.emit()
+	
 	
