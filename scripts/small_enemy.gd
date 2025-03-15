@@ -1,14 +1,8 @@
 extends Sprite2D
+@onready var game_manager = %GameManager
 
 var health: int = 10
-var can_shoot: bool = true
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-func _process(delta):
-	
-	pass
+var score_value := 10
 
 func shoot():
 	const BEAM = preload("res://scenes/beam.tscn")
@@ -18,6 +12,7 @@ func shoot():
 	add_sibling(beam_instance)
 
 func _on_hurt_box_health_depleted():
+	game_manager.player_score += score_value
 	queue_free()
 
 func _on_fire_rate_timeout():
