@@ -6,6 +6,7 @@
 [node name="Level1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_66b4d")]
+unique_name_in_owner = true
 position = Vector2(329, 1075)
 
 [node name="SmallEnemy" parent="." instance=ExtResource("2_buby1")]
