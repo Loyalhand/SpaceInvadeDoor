@@ -19,5 +19,9 @@ script = ExtResource("3_pavoy")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_jgahb")
 
+[node name="FireRate" type="Timer" parent="."]
+autostart = true
+
 [connection signal="area_entered" from="HurtBox" to="HurtBox" method="_on_area_entered"]
 [connection signal="health_depleted" from="HurtBox" to="." method="_on_hurt_box_health_depleted"]
+[connection signal="timeout" from="FireRate" to="." method="_on_fire_rate_timeout"]

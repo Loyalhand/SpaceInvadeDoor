@@ -10,3 +10,4 @@ position = Vector2(329, 1075)
 
 [node name="SmallEnemy" parent="." instance=ExtResource("2_buby1")]
 position = Vector2(332, 205)
+rotation = 3.14159
