@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var health: int = 100
+var health: int = 10
 var can_shoot: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +18,7 @@ func shoot():
 	add_sibling(beam_instance)
 
 func _on_hurt_box_health_depleted():
-	print("dead")
+	queue_free()
 
 func _on_fire_rate_timeout():
 	$FireRate.wait_time = randf_range(0,5)

@@ -20,7 +20,7 @@ func _on_area_entered(hitbox: HitBox):
 
 func take_damage(hitbox: HitBox):
 	parent.health -= hitbox.damage
-	if parent.health < 0:
+	if parent.health <= 0:
 		health_depleted.emit()
 	
 	
