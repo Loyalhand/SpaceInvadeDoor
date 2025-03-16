@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 var health = 100
 var screen_size_x
+var projectile = preload("res://scenes/rocket.tscn")
 
 func _ready():
 	screen_size_x = get_viewport().get_visible_rect().size.x
@@ -26,8 +27,7 @@ func _physics_process(_delta):
 	#print(health)
 	
 func shoot():
-	const BEAM = preload("res://scenes/beam.tscn")
-	var beam_instance = BEAM.instantiate()
+	var beam_instance = projectile.instantiate()
 	beam_instance.global_position = global_position
 	add_sibling(beam_instance)
 

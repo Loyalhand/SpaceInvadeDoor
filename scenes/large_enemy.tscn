@@ -17,6 +17,8 @@ fire_rate_min = 2
 fire_rate_max = 3
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_ou1lc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
