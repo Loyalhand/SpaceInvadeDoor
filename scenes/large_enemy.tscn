@@ -1,23 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg1cbv6lq52yw"]
+[gd_scene load_steps=5 format=3 uid="uid://badfmcxejrmho"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="2_f3yqj"]
-[ext_resource type="Texture2D" uid="uid://be1i4kaeip0ye" path="res://icon.svg" id="2_tppe5"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_pavoy"]
+[ext_resource type="Texture2D" uid="uid://be1i4kaeip0ye" path="res://icon.svg" id="1_vrh5k"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="2_7ahn4"]
+[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_ou1lc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgahb"]
 size = Vector2(58, 56)
 
-[node name="SmallEnemy" type="Sprite2D"]
+[node name="LargeEnemy" type="Sprite2D"]
 scale = Vector2(0.47, 0.47)
-texture = ExtResource("2_tppe5")
-script = ExtResource("2_f3yqj")
-health = 10
-score_value = 10
-fire_rate_min = 4
-fire_rate_max = 5
+texture = ExtResource("1_vrh5k")
+script = ExtResource("2_7ahn4")
+health = 30
+score_value = 50
+fire_rate_min = 2
+fire_rate_max = 3
 
 [node name="HurtBox" type="Area2D" parent="."]
-script = ExtResource("3_pavoy")
+script = ExtResource("3_ou1lc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -1)

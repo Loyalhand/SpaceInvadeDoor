@@ -1,8 +1,12 @@
+class_name Enemy
 extends Sprite2D
 @onready var game_manager = %GameManager
 
-var health: int = 10
-var score_value := 10
+@export var health: int = 0
+@export var score_value := 0
+@export var fire_rate_min = 0
+@export var fire_rate_max = 0
+
 
 func shoot():
 	const BEAM = preload("res://scenes/beam.tscn")
@@ -16,5 +20,5 @@ func _on_hurt_box_health_depleted():
 	queue_free()
 
 func _on_fire_rate_timeout():
-	$FireRate.wait_time = randf_range(4,5)
+	$FireRate.wait_time = randf_range(fire_rate_min, fire_rate_max)
 	shoot()
