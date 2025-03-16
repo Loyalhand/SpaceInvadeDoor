@@ -1,7 +1,7 @@
 extends Node2D
 
-const SPEED = 2000
-var damage = 10
+const SPEED = 3000
+var damage = 0
 
 func _physics_process(delta):
 	position += (Vector2.RIGHT * SPEED).rotated(rotation) * delta

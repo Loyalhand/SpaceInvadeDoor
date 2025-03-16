@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://3q4jjemn2bda"]
+
+[ext_resource type="Texture2D" uid="uid://be1i4kaeip0ye" path="res://icon.svg" id="1_qiqfj"]
+[ext_resource type="Script" path="res://scripts/mother_ship.gd" id="2_1bsni"]
+[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_ypjx0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgahb"]
+size = Vector2(58, 56)
+
+[node name="Mothership" type="Sprite2D"]
+rotation = -3.14159
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("1_qiqfj")
+script = ExtResource("2_1bsni")
+health = 50
+score_value = 100
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_ypjx0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_jgahb")
+
+[node name="FireRate" type="Timer" parent="."]
+autostart = true
+
+[node name="LaserTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="FiringPoint" type="Marker2D" parent="."]
+position = Vector2(0, -74.4681)
+
+[connection signal="area_entered" from="HurtBox" to="HurtBox" method="_on_area_entered"]
+[connection signal="health_depleted" from="HurtBox" to="." method="_on_hurt_box_health_depleted"]
+[connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
