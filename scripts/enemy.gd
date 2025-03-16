@@ -1,6 +1,6 @@
 class_name Enemy
 extends Sprite2D
-@onready var parent = $".."
+@onready var parent = $"../../.."
 
 
 @export var health: int = 0

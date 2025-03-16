@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://0li0emfpem1p"]
+
+[ext_resource type="PackedScene" uid="uid://dg1cbv6lq52yw" path="res://scenes/small_enemy.tscn" id="1_ny428"]
+[ext_resource type="PackedScene" uid="uid://1ikb4mmce73" path="res://scenes/medium_enemy.tscn" id="2_t3145"]
+[ext_resource type="PackedScene" uid="uid://badfmcxejrmho" path="res://scenes/large_enemy.tscn" id="3_rvoy2"]
+
+[node name="Arrow" type="Node2D"]
+
+[node name="SmallEnemy" parent="." instance=ExtResource("1_ny428")]
+position = Vector2(-1.76597, 190.234)
+rotation = 3.13646
+
+[node name="SmallEnemy2" parent="." instance=ExtResource("1_ny428")]
+position = Vector2(-65.766, 126.234)
+rotation = 3.13646
+
+[node name="SmallEnemy3" parent="." instance=ExtResource("1_ny428")]
+position = Vector2(62.234, 126.234)
+rotation = 3.13646
+
+[node name="MediumEnemy" parent="." instance=ExtResource("2_t3145")]
+position = Vector2(126.234, 62.234)
+rotation = 3.13646
+
+[node name="MediumEnemy2" parent="." instance=ExtResource("2_t3145")]
+position = Vector2(-129.766, 62.234)
+rotation = 3.13646
+
+[node name="LargeEnemy" parent="." instance=ExtResource("3_rvoy2")]
+position = Vector2(-1.76597, -1.76601)
+rotation = 3.13646

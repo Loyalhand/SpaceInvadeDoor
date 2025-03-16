@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://oplmi08p0i75"]
 
 [ext_resource type="Script" path="res://scripts/formation.gd" id="1_y3gnk"]
-[ext_resource type="Script" path="res://scripts/movement.gd" id="2_cin21"]
+[ext_resource type="PackedScene" uid="uid://0li0emfpem1p" path="res://scenes/arrow.tscn" id="2_dnuot"]
 
 [node name="Formation" type="Node2D"]
-script = ExtResource("1_y3gnk")
 
 [node name="Movement" type="Node2D" parent="."]
-script = ExtResource("2_cin21")
+script = ExtResource("1_y3gnk")
 
 [node name="MoveTimerForward" type="Timer" parent="Movement"]
 one_shot = true
@@ -19,10 +18,10 @@ one_shot = true
 one_shot = true
 
 [node name="SpawnTimer" type="Timer" parent="Movement"]
-wait_time = 4.0
-autostart = true
 
-[connection signal="timeout" from="Movement/MoveTimerForward" to="Movement" method="_on_move_timer_forward_timeout"]
-[connection signal="timeout" from="Movement/MoveTimerLeft" to="Movement" method="_on_move_timer_left_timeout"]
-[connection signal="timeout" from="Movement/MoveTimerRight" to="Movement" method="_on_move_timer_right_timeout"]
+[node name="Arrow" parent="Movement" instance=ExtResource("2_dnuot")]
+
+[connection signal="timeout" from="Movement/MoveTimerForward" to="." method="_on_move_timer_forward_timeout"]
+[connection signal="timeout" from="Movement/MoveTimerLeft" to="." method="_on_move_timer_left_timeout"]
+[connection signal="timeout" from="Movement/MoveTimerRight" to="." method="_on_move_timer_right_timeout"]
 [connection signal="timeout" from="Movement/SpawnTimer" to="." method="_on_spawn_timer_timeout"]

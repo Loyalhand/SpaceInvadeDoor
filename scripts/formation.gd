@@ -1,13 +1,13 @@
 extends Node2D
 @onready var game_manager = %GameManager
 
-var score = 0
+var score = 0 
 
-#func _process(_delta):
-	#print(get_child_count())
-	#game_manager.player_score += score
-	#if get_child_count() <= 4:
-		#queue_free()
-	
-func _on_move_timer_forward_timeout():
-	global_position.x += 8 
+func _process(_delta):
+	game_manager.player_score = score
+
+func _on_spawn_timer_timeout():
+	const ARROW = preload("res://scenes/arrow.tscn")
+	var arrow_instance = ARROW.instantiate()
+	arrow_instance.global_position = position
+	$Movement.add_sibling(arrow_instance)
