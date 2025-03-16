@@ -3,7 +3,6 @@ extends Enemy
 @onready var player = %Player
 
 
-
 func laser():
 	firing_point.look_at(player.position)
 	
