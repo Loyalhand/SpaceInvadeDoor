@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://0li0emfpem1p"]
+
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_f7ts8"]
+[ext_resource type="PackedScene" uid="uid://dg1cbv6lq52yw" path="res://scenes/small_enemy.tscn" id="2_1tyf0"]
+[ext_resource type="PackedScene" uid="uid://1ikb4mmce73" path="res://scenes/medium_enemy.tscn" id="3_u1xsx"]
+[ext_resource type="PackedScene" uid="uid://badfmcxejrmho" path="res://scenes/large_enemy.tscn" id="4_wul4y"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_f7ts8")
+
+[node name="SmallEnemy" parent="." instance=ExtResource("2_1tyf0")]
+position = Vector2(30.234, 222.234)
+rotation = 3.13646
+
+[node name="SmallEnemy2" parent="." instance=ExtResource("2_1tyf0")]
+position = Vector2(-33.766, 158.234)
+rotation = 3.13646
+
+[node name="SmallEnemy3" parent="." instance=ExtResource("2_1tyf0")]
+position = Vector2(94.234, 158.234)
+rotation = 3.13646
+
+[node name="MediumEnemy" parent="." instance=ExtResource("3_u1xsx")]
+position = Vector2(158.234, 94.234)
+rotation = 3.13646
+
+[node name="MediumEnemy2" parent="." instance=ExtResource("3_u1xsx")]
+position = Vector2(-97.766, 94.234)
+rotation = 3.13646
+
+[node name="LargeEnemy" parent="." instance=ExtResource("4_wul4y")]
+position = Vector2(30.234, 30.234)
+rotation = 3.13646

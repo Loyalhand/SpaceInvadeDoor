@@ -19,7 +19,8 @@ one_shot = true
 one_shot = true
 
 [node name="SpawnTimer" type="Timer" parent="Movement"]
-wait_time = 4.0
+wait_time = 2.0
+one_shot = true
 autostart = true
 
 [connection signal="timeout" from="Movement/MoveTimerForward" to="Movement" method="_on_move_timer_forward_timeout"]

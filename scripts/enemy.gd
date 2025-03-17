@@ -1,7 +1,5 @@
 class_name Enemy
 extends Sprite2D
-@onready var parent = $"../../.."
-
 
 @export var health: int = 0
 @export var score_value := 0
@@ -17,7 +15,7 @@ func shoot():
 	add_sibling(beam_instance)
 
 func _on_hurt_box_health_depleted():
-	parent.score += score_value
+	$"/root/SignalBus".has_destroyed_enemy.emit(score_value)
 	queue_free()
 
 func _on_fire_rate_timeout():

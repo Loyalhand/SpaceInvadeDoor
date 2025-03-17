@@ -21,7 +21,3 @@ func _on_move_timer_left_timeout():
 		$MoveTimerLeft.start()
 	else: 
 		$MoveTimerForward.start()
-
-func _on_spawn_timer_timeout():
-	const ARROW = preload("res://scenes/arrow.tscn")
-	var arrow_instance = ARROW.instantiate()
